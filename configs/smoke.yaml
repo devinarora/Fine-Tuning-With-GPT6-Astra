@@ -1,0 +1,23 @@
+seed: 42
+runtime:
+  budget_seconds: 1200
+  checkpoint_seconds: 20
+  evaluation_reserve_seconds: 120
+data:
+  train_per_source: 32
+  validation_per_source: 4
+  test_per_source: 4
+  max_source_tokens: 64
+  max_target_tokens: 64
+training:
+  epochs: 1
+  micro_batch_size: 2
+  effective_batch_size: 4
+  max_steps: 4
+  validation_seconds: 10
+  calibration_warmup_updates: 1
+  calibration_updates: 2
+evaluation:
+  beams: 2
+  batch_size: 2
+  bootstrap_samples: 100

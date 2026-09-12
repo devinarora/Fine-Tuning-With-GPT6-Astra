@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fr-en-ft"
+version = "0.1.0"
+description = "A local, budget-aware French-to-English fine-tuning experiment"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.6", "transformers>=5.16,<5.18", "datasets>=4.8,<6",
+  "accelerate>=1.15,<2", "huggingface-hub>=1.8,<2", "safetensors>=0.8",
+  "sentencepiece>=0.2", "sacremoses>=0.2", "sacrebleu>=2.6,<3",
+  "bert-score==0.3.13", "numpy>=2,<3", "PyYAML>=6", "pandas>=2,<3",
+  "matplotlib>=3.10", "psutil>=7", "packaging>=25",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ipykernel>=6", "jupyterlab>=4"]
+
+[project.scripts]
+fr-en-ft = "fr_en_ft.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: uses the installed Hugging Face/PyTorch stack"]

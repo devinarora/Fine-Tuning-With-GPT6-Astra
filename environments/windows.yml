@@ -1,0 +1,7 @@
+name: fr-en-ft
+channels:
+  - defaults
+dependencies:
+  - python=3.13.9
+  - pip
+# Version reference for Windows editing and inspection tools. Runtime checks use WSL.

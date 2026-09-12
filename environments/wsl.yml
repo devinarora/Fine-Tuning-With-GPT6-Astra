@@ -1,0 +1,8 @@
+name: fr-en-ft
+channels:
+  - defaults
+dependencies:
+  - python=3.10.21
+  - pip
+# Install CUDA PyTorch and requirements-wsl.lock using the commands in docs/environments.md.
+# Override the environment name with --name when creating a project environment.
