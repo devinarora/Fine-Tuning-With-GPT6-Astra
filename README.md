@@ -1,2 +1,16 @@
 # Fine Tuning With GPT6 Astra
-Fine tuning a lightweight LLM. This project is primarily designed to compare the functionality and workflow of GPT6 Astra with that of the DeepSeek v4 Flash model. Please reference the sister project for that evaluation. 
+Fine tuning a lightweight LLM. This project is primarily designed to compare the functionality and workflow of GPT6 Astra with that of the DeepSeek v4 Flash model. Please reference the forthcoming sister project for that evaluation. 
+
+
+
+
+
+The following was the initial prompt that I used to start with both models: 
+
+"Design an end-to-end data loading, processing, model loading, fine-tuning, and evaluation pipeline. This should use huggingface for sourcing the dataset and the model. Both the dataset and the model should be small enough that the whole pipeline can run on this machine's local hardware without significant issue. The model will be fine-tuned to translate text in French to English. The training process should include checkpointing for safety, a training time estimate, and comprehensive evaluation metrics. Grill me on any ambiguities in the above request. Note any possible constraints. Suggest options for the dataset and model with links to them on huggingface."
+
+Because this experiment is more focused on the workflow and capabilities of the assistant model, the fine-tuned model will be as lightweight as possible. Astra returned with several rounds of clarifying questions during the planning phase, with almost all of them being directly relevant. I did at one point need to reset the context so I was able to compare the variance of two separate attempts. This revealed some overlaps, specifically where I asked it to address local hardware constraints and training times. However, this also revealed that some of the initial planning from the first run was either not firm or incomplete as there were suggestions that only appeared in one or the other. 
+
+Planning with the model was generally quite effective, with only a few hiccups that the model needed guidance to resolve. Because I am working on a Windows machine, I used a Linux VM for actually running the model training. Astra could not independently resolve this (understandable, I had not specified that this was the case initially) and continued to evaluate dependency checks on the Windows machine several times after I clarified. There were some issues on my end as well. I have learned to be much more specific on certain requirements as my common sense judgement to use a toy model for testing the pipeline evidently did not carry over into the model, which insisted on training on 1/5 of the total dataset to test checkpointing.
+
+Ultimately, this is an impressive tool that required relatively little assistance after some initial environment setup. It could have been more efficient in its testing strategy for the training pipeline, but this may be reframed as a mistake on my part for not clearly defining a better testing strategy. There were a few instances where the model made mistakes that required my intervention, but the total sum of this experiment is that this is a remarkably capable tool. Undoubtedly I learned a lot from this experience, but I would almost certainly select another model before using this again due to the very high cost.
