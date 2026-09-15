@@ -1,9 +1,5 @@
 # Fine Tuning With GPT6 Astra
-Fine tuning a lightweight LLM. This project is primarily designed to compare the functionality and workflow of GPT6 Astra with that of the DeepSeek v4 Flash model. Please reference the forthcoming sister project for that evaluation. 
-
-
-
-
+Fine tuning a lightweight LLM. This project is primarily designed to compare the functionality and workflow of GPT6 Astra with that of the DeepSeek v4 Flash model. Please reference the sister project [here](https://github.com/devinarora/Fine-Tuning-With-DeepSeek-v4-Flash) for that evaluation. 
 
 The following was the initial prompt that I used to start with both models: 
 
